@@ -5,16 +5,30 @@
   <meta charset="utf-8">
   <title>My HTML File</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+
   <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+
   <script src="app.module.js"></script>
+  <script src="app.config.js"></script>
+
+  <script src="core/core.module.js"></script>
+  <script src="core/checkmark/checkmark.filter.js"></script>
+  <script src="core/phone/phone.module.js"></script>
+  <script src="core/phone/phone.service.js"></script>
+
   <script src="phone-list/phone-list.module.js"></script>
   <script src="phone-list/phone-list.component.js"></script>
+  <script src="phone-detail/phone-detail.module.js"></script>
+  <script src="phone-detail/phone-detail.component.js"></script>
 </head>
 
 <body>
   <!--<p>query: {{$ctrl.query}}</p>-->
-  <phone-list></phone-list>
   <!--<phone-list></phone-list>-->
+  <!--<phone-list></phone-list>-->
+  <div ng-view></div>
 </body>
 <!--<body ng-controller="PhoneListController">-->
 <!--<p>Hello, {{name}}!</p>
