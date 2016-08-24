@@ -1,28 +1,22 @@
+// angular.module('phoneList')
+  // .component('phoneList', {
+  //   templateUrl: 'phone-list/phone-list.template.html',
+  //   controller: function PhoneListController($http) {
+  //     PhoneListController.$inject = ['$http'];
+  //     var self = this;
+  //     this.orderProp = 'age';
+
+  //     $http.get('phones/phones.json').then(function(response) {
+  //       self.phones = response.data;//.slice(0, 5);
+  //     });
+  //   }
+  // });
 angular.module('phoneList')
   .component('phoneList', {
     templateUrl: 'phone-list/phone-list.template.html',
-    controller: function PhoneListController($http) {
-      PhoneListController.$inject = ['$http'];
-      var self = this;
+    controller: function PhoneListController(Phone) {
+      PhoneListController.$inject = ['Phone'];
+      this.phones = Phone.query();
       this.orderProp = 'age';
-
-      $http.get('phones/phones.json').then(function(response) {
-        self.phones = response.data;//.slice(0, 5);
-      });
-      // this.phones = [
-      //   {
-      //     name: 'Nexus S',
-      //     snippet: 'Fast just got faster with Nexus S.',
-      //     age: 1
-      //   }, {
-      //     name: 'Motorola XOOM™ with Wi-Fi',
-      //     snippet: 'The Next, Next Generation tablet.',
-      //     age: 2
-      //   }, {
-      //     name: 'MOTOROLA XOOM™',
-      //     snippet: 'The Next, Next Generation tablet.',
-      //     age: 3
-      //   }
-      // ];
     }
   });

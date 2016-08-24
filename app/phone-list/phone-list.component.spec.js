@@ -18,23 +18,17 @@ describe('phoneList', function () {
     }));
 
 
+    it('should set a default value for the `orderProp` model', function () {
+      expect(ctrl.orderProp).toBe('age');
+    });
+
     it('should create a `phones` property with 2 phones fetched with `$http`', function () {
-      expect(ctrl.phones).toBeUndefined();
+      jasmine.addCustomEqualityTester(angular.equals);
 
       $httpBackend.flush();
 
       expect(ctrl.phones).toEqual([{ name: 'Nexus S' }, { name: 'Motorola DROID' }]);
     });
-
-
-    it('should set a default value for the `orderProp` model', function () {
-      expect(ctrl.orderProp).toBe('age');
-    });
-
-
-
-
+    
   });
-
-
 });
